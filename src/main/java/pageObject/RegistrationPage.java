@@ -1,5 +1,5 @@
 package pageObject;
-
+//import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
@@ -9,12 +9,14 @@ import org.openqa.selenium.support.ui.Select;
 import java.time.Month;
 //import org.openqa.selenium.support.ui.Select;//
 
-public class RegistrationPage {
+public class RegistrationPage
+{
 
     private WebDriver driver3;
 
 
-    public RegistrationPage(WebDriver driver2) {
+    public RegistrationPage(WebDriver driver2)
+    {
         driver3 = driver2;
         PageFactory.initElements(driver3, this);
     }
@@ -22,16 +24,16 @@ public class RegistrationPage {
     @FindBy(linkText = "Register")
     private WebElement registerlink;
 
-    @FindBy(id = "gender= male")
+    @FindBy(id = "gender-male")
     private WebElement gendermale;
 
-    @FindBy(id = "gender =female")
+    @FindBy(id = "gender-female")
     private WebElement genderfemale;
 
-    @FindBy(id = "id= FirstName")
+    @FindBy(id = "FirstName")
     private WebElement firstname;
 
-    @FindBy(id = "id= LastName")
+    @FindBy(id = "LastName")
     private WebElement lastname;
 
     @FindBy(name = "DateOfBirthDay")
@@ -68,7 +70,8 @@ public class RegistrationPage {
     private WebElement myaccountlink;
 
 
-    public boolean verifyonLandingPage() {
+    public boolean verifyonLandingPage()
+    {
         return registerlink.isDisplayed();
     }
 
@@ -76,71 +79,86 @@ public class RegistrationPage {
         registerlink.click();
     }
 
-    public void selectGender(String gender) {
-
-        if (gender.equalsIgnoreCase("male")) {
+    public void selectGender(String gender)
+    {
+        if (gender.equalsIgnoreCase("male"))
+        {
             gendermale.click();
-        } else if (gender.equalsIgnoreCase("female")) {
+        } else if (gender.equalsIgnoreCase("female"))
+        {
             genderfemale.click();
         }
 
     }
 
-    public void enterFirstName(String firstname) {
+    public void enterFirstName(String firstname)
+    {
         this.firstname.sendKeys(firstname);
     }
 
-    public void enterLastName(String lastname) {
+    public void enterLastName(String lastname)
+    {
         this.lastname.sendKeys(lastname);
     }
 
-    public void selectDay(String day) {
+    public void selectDay(String day)
+    {
         new Select(this.day).selectByValue(day);
     }
 
-    public void selectMonth(String month) {
+    public void selectMonth(String month)
+    {
         new Select(this.month).selectByValue(month);
     }
 
-    public void selectYear(String year) {
+    public void selectYear(String year)
+    {
         new Select(this.year).selectByValue(year);
     }
 
-    public void enterEmail(String Email) {
-        this.email.sendKeys("email");
+    public void enterEmail(String email)
+    {
+        this.email.sendKeys(email);
 
     }
 
-    public void enterCompany(String Company) {
-        this.company.sendKeys("company");
+    public void enterCompany(String company) {
+        this.company.sendKeys(company);
     }
 
     public void clickNewsletter(String newsletter) {
-        if (newsletter.equalsIgnoreCase("No") || newsletter.equalsIgnoreCase("uncheck")) {
+        if (newsletter.equalsIgnoreCase("No") || newsletter.equalsIgnoreCase("uncheck"))
+        {
             this.newsletter.click();
 
         }
     }
 
-    public void enterPassword(String password) {
+    public void enterPassword(String password)
+    {
         this.password.sendKeys(password);
 
     }
-    public void enterConfirmPassword(String confirmpassword){
+    public void enterConfirmPassword(String confirmpassword)
+    {
         this.confirmpassword.sendKeys(confirmpassword);
     }
 
-    public void clickRegisterButton(){
+    public void clickRegisterButton()
+    {
         registerbutton.click();
     }
 
-    public void clickContinueButton(){
+    public void clickContinueButton()
+    {
         continuebutton.click();
     }
 
-    public boolean verifyonHomePage(){
+    public boolean verifyonHomePage()
+    {
         return myaccountlink.isDisplayed();
     }
+
     }
 
 

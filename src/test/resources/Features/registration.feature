@@ -1,15 +1,17 @@
 @registration
-Feature:  Registrtion
-  As a user i want to register.
+Feature:  Registration
+As a user i want to register
+  Scenario Outline: Registration
+    Given I am on the landing page
+    When I click on the registration button
+    And User fills the registration form with valid details "<gender>" "<firstname>" "<lastname>" "<DoBDay>" "<DoBMonth>" "<DoBYear>" "<email>" "<CompanyName>" "<newsletter>" "<password>""<confirmpassword>"
+    And I click on the registration button and continue button
+    Then I should be on the home page
+    Examples:
+      | gender | firstname | lastname | DoBDay | DoBMonth | DoBYear | email           | CompanyName | newsletter | password | confirmpassword |
+      | Male   | Anish     | Mehata   | 11     | 3        | 1988    |anish.M@abcd.com | ABC Limited | Yes        | Abc123   |  Abc123         |
 
-    Scenario Outline: Registration.
-    Given I am on the registration page.
-    When I click on the registration button.
-    And I fills the registration form with valid details."<gender>"<First Name>"<Last Name>"<DoBDay>"<DoBMonth>"<DoBYear>"<Email>"<Company Name>"<Options>"<Your Password>"<REGISTER>"
-    And I click on the registration button and continue button.
-    Then I should be on the home page.
-        Examples:
-            | gender | First Name | Last Name | DoBDay | DoBMonth | DoBYear | Email           | Company Name | Options    | Your Password | REGISTER |
-            | Male   | Anish      | Mehata    | 11      | 3        | 1988   | anish.M@abcd.com| ABC Limited  | Newsletter | Abc123        |  Click   |
+
+
 
 

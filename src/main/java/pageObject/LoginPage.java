@@ -5,17 +5,18 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class LoginPage {
+public class LoginPage
+{
     private WebDriver driver5;
 
-    public LoginPage(WebDriver driver4) {
+    public LoginPage(WebDriver driver4)
+    {
         driver5 = driver4;
         PageFactory.initElements(driver5, this); //constructor method for login page
     }
 
     @FindBy(linkText = "Log in")
-    private WebElement LoginLink;
-
+    private WebElement loginLink;
 
     @FindBy(id = "Email")
     private WebElement email;
@@ -24,36 +25,32 @@ public class LoginPage {
     private WebElement password;
 
     @FindBy(id = "RememberMe")
-    private WebElement RememberMe;
+    private WebElement rememberme;
 
-    @FindBy(className = "button-1.login-button")
-    private WebElement LoginButton;
+    @FindBy(css = "button.button-1.login-button")
+    private WebElement loginbutton;
 
-    public boolean verifyonLandingPage() {
-        return LoginLink.isDisplayed();
+    public void clickLoginlink()
+    {
+        loginLink.click();
     }
 
-    public void navigateToLoginPage() {
-        LoginLink.click();
+    public void enterEmail(String emailid)
+    {
+        email.sendKeys(emailid);
     }
 
-    public void enterEmail(String email) {
-        this.email.sendKeys((email));
+    public void enterPassword(String passwordid)
+    {
+        password.sendKeys(passwordid);
     }
-
-    public void enterPassword(String password) {
-        this.password.sendKeys((password));
+    public void clickRememberme()
+    {
+        rememberme.click();
     }
-
-    public void clickRememberMe() {
-        this.RememberMe.click();
-    }
-
-    public void clickLoginButton() {
-        this.LoginButton.click();
-    }
-
-    public void clickLoginlink() {LoginLink.click();
+    public void clickLoginbutton()
+    {
+        loginbutton.click();
     }
 }
 
