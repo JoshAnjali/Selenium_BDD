@@ -1,6 +1,5 @@
 package Step_Definitions.registration;
 
-import Step_Definitions.Hooks;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
@@ -28,7 +27,7 @@ public class Registration {
     }
 
     @When("User fills the registration form with valid details {string} {string} {string} {string} {string} {string} {string} {string} {string} {string} {string} ")
-    public void registrationInputs(String gender, String firstname,String lastname, String DoBDay, String DoBMonth, String DoBYear, String email, String companyname, String newsletter, String password, String confirmpassword)
+    public void registrationInputs(String gender, String firstname,String lastname, String DoBDay, String DoBMonth, String DoBYear, String email, String companyname, String newsletter, String password, String ConfirmPassword)
     {
         registrationPage.selectGender(gender);
         registrationPage.enterFirstName(firstname);
@@ -40,7 +39,7 @@ public class Registration {
         registrationPage.enterCompany(companyname);
         registrationPage.clickNewsletter(newsletter);
         registrationPage.enterPassword(password);
-        registrationPage.enterConfirmPassword(confirmpassword);
+        registrationPage.enterConfirmPassword(ConfirmPassword);
     }
     @When("I click on the registration button and continue button")
     public void clickRegister() throws InterruptedException

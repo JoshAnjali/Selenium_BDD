@@ -1,4 +1,4 @@
-package Step_Definitions;
+package Step_Definitions.registration;
 
 import com.aventstack.extentreports.ExtentReports;
 import com.aventstack.extentreports.ExtentTest;

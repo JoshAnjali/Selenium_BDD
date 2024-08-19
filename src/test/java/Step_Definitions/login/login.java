@@ -1,6 +1,6 @@
 package Step_Definitions.login;
 
-import Step_Definitions.Hooks;
+import Step_Definitions.registration.Hooks;
 import io.cucumber.java.en.When;
 import org.openqa.selenium.WebDriver;
 import pageObject.LoginPage;

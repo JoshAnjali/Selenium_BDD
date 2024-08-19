@@ -1,4 +1,4 @@
-package Step_Definitions;
+package Step_Definitions.registration;
 
 import org.junit.After;
 import org.junit.Before;
